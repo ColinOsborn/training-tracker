@@ -2,9 +2,9 @@ module OmniauthMacros
   def mock_auth_hash
     # The mock_auth configuration allows you to set per-provider (or default)
     # authentication hashes to return during integration testing.
-    OmniAuth.config.mock_auth[:strava] = {
+    OmniAuth.config.mock_auth[:strava] = OmniAuth::AuthHash.new({
       'provider' => 'strava',
-      'uid' => '123545',
+      'uid' => '12657',
       'user_info' => {
         'name' => 'mockuser',
         'image' => 'mock_user_thumbnail_url'
@@ -13,6 +13,6 @@ module OmniauthMacros
         'token' => 'mock_token',
         'secret' => 'mock_secret'
       }
-    }
+    })
   end
 end

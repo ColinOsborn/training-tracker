@@ -1,6 +1,22 @@
+<!-- <body background="https://3.bp.blogspot.com/-_spvl4kXi_0/V5br-pUa9OI/AAAAAAAAFag/GzK_RVtbeVU5zHVL-_Zz16ZE4FDEn8sVgCLcB/s1600/nytt_bild.jpg"> -->
+<body background="app/assets/images/nytt_bild.jpg">
 <div class="container">
   <div class="jumbotron">
 
-    <h1>Welcome to the Training Tracker!</h1>
+    <h1 class="text-center">Training Tracker</h1>
+  </div>
+</div>
+<br>
+<div class="container text-center">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <!-- <%= render partial: "shared/login" %> -->
+      <% if current_user %>
+        Hello, <%= athlete.firstname %>
+        <%= link_to "Logout", logout_path, method: :delete %>
+      <% else %>
+        <%= link_to "Sign in with Strava", strava_login_path %>
+      <% end %>
+    </div>
   </div>
 </div>

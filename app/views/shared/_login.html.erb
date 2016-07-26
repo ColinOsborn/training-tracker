@@ -1,0 +1,6 @@
+<% if current_user %>
+  Hello, <%= athlete.firstname %>
+  <%= link_to "Logout", logout_path, method: :delete %>
+<% else %>
+  <%= link_to "Sign in with Strava", strava_login_path %>
+<% end %>

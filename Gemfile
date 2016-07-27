@@ -32,7 +32,7 @@ gem 'capybara'
 gem 'simplecov'
 gem 'rspec-rails'
 gem "omniauth-strava"
-gem 'omniauth-oauth2', '~> 1.3.1'
+# gem 'omniauth-oauth2', '~> 1.3.1'
 
 group :test do
   gem 'webmock'

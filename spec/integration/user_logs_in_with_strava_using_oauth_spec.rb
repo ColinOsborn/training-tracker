@@ -15,13 +15,15 @@ RSpec.feature "user logs in with strava" do
     expect(page).to have_content(user.firstname)
     expect(page).to have_content("Sign Out")
 
-    # scenario "can handle authentication error" do
-    #   OmniAuth.config.mock_auth[:strava] = :invalid_credentials
-    #   visit '/'
-    #   page.should have_content("Sign in with Strava")
-    #   # click_link "Sign in"
-    #   page.should have_content('Authentication failed.')
-    # end
+    scenario "can handle authentication error" do
+      OmniAuth.config.mock_auth[:strava] = :invalid_credentials
+      visit '/'
+      page.should have_content("Sign in with Strava")
+      within(".login") do
+        click_on "Log in with Strava"
+      end
+      page.should have_content('Authentication failed.')
+    end
 
   end
 end

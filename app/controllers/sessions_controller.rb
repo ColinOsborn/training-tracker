@@ -1,8 +1,8 @@
 class SessionsController < ApplicationController
 
   def create
-    if user = Athlete.from_omniauth(request.env["omniauth.auth"])
-      session[:uid] = uid
+    if user = User.from_omniauth(request.env["omniauth.auth"])
+      session[:user_id] = user.user_id
     else
       flash[:danger] = "There was a problem signing in"
     end
@@ -10,9 +10,9 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-   session.delete(:uid)
+   session.delete(:user_id)
    @current_user = nil
    flash[:success] = "You have been logged out."
-   redirect_to root_url
+   redirect_to root_path
  end
 end

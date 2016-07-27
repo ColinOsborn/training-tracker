@@ -10,19 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160726050711) do
+ActiveRecord::Schema.define(version: 20160727001233) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "athletes", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "token"
+    t.string   "name"
     t.string   "firstname"
     t.string   "lastname"
-    t.string   "oauth_token"
-    t.string   "oauth_token_secret"
-    t.integer  "uid"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.string   "email"
+    t.string   "profile_picture"
+    t.string   "city"
+    t.string   "state"
+    t.string   "sex"
+    t.integer  "ftp"
+    t.float    "weight"
+    t.integer  "height"
+    t.string   "bikes"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end

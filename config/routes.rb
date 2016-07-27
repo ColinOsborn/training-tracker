@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
 
-  root 'homepage#show'
-
-  get '/auth/strava', as: :strava_login
-  # get "/strava/oauth/authorize", as: :strava_login
-  get "/auth/strava/callback", to: "sessions#create"
+  get '/auth/:provider/callback', to: "sessons#create", as: :strava_login
   delete "/logout",             to: "sessions#destroy"
 
+  root 'homepage#show'
 end

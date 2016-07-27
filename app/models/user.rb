@@ -1,12 +1,25 @@
 class User < ApplicationRecord
 
-  def self.from_omniauth(auth_info)
-    where(user_id: auth_info[:user_id]).first_or_create do |new_user|
-      new_user.user_id            = auth_info.user_id
-      new_user.firstname          = auth_info.extra.raw_info.firstname
-      new_user.lastname           = auth_info.extra.raw_info.lastname
-      new_user.token              = auth_info.credentials.token
-      new_user.oauth_token_secret = auth_info.credentials.secret
-    end
+  def self.find_or_create_from_auth(auth)
+    user = User.find_by(provider: auth[:provider], user_id: aith[:uid])
+    user_hash(user, auth)
+    user.save
+    return user
   end
+
+  def user_hash(user, auth)
+    user.token =            auth[:credentials][:token]
+    user.firstname =        auth[:info][:firstname]
+    user.lastname =         auth[:info][:lastname]
+    user.email =            auth[:info][:email]
+    user.profile_picture =  auth[:info][:profile_picture]
+    user.city =             auth[:info][:city]
+    user.state =            auth[:info][:state]
+    user.sex =              auth[:info][:sex]
+    user.height =           auth[:info][:height]
+    user.weight =           auth[:info][:weight]
+    user.ftp =              auth[:info][:ftp]
+    user.bikes =            auth[:info][:bikes]
+  end
+
 end

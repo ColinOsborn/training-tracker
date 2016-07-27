@@ -8,8 +8,11 @@ RSpec.feature "user logs in with strava" do
     visit root_path
     expect(response).to have_http_status(:success)
 
-    click_link "Sign in with Strava"
-    expect(current_path).to eq("/")
+    within("#login") do
+      click_on "Log in with Strava"
+    end
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content(user.firstname)
     expect(page).to have_content("Sign Out")
 
     # scenario "can handle authentication error" do

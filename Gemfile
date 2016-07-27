@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-# gem 'strava-api-v3' - possibly use this, but probably need more work on API consumption
+gem 'strava-api-v3'
 gem 'figaro'
 gem 'faraday'
 gem 'launchy'
@@ -32,7 +32,7 @@ gem 'capybara'
 gem 'simplecov'
 gem 'rspec-rails'
 gem "omniauth-strava"
-# gem 'omniauth-oauth2', '~> 1.3.1'
+gem 'omniauth-oauth2', '~> 1.3.1'
 
 group :test do
   gem 'webmock'

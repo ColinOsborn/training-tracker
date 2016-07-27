@@ -14,8 +14,7 @@
         Hello, <%= user.user_id %>
         <%= link_to "Logout", logout_path, method: :delete %>
       <% else %>
-        <%= link_to "Sign in with Strava", strava_login_path %>
-        <!-- <%= link_to image_tag("https://2.bp.blogspot.com/-dxNtpD5Om_s/V5gLBDyY7DI/AAAAAAAAFaw/WnQBbU4mAuM5Y4y1CUYeESTHDqNyYn5tgCLcB/s1600/LogInWithStrava.png"), strava_login_path %> -->
+        <%= link_to "Sign in with Strava", "/auth/strava" %>
       <% end %>
     </div>
   </div>

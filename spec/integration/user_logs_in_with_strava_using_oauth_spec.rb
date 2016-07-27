@@ -8,7 +8,7 @@ RSpec.feature "user logs in with strava" do
     visit root_path
     expect(response).to have_http_status(:success)
 
-    within("#login") do
+    within(".login") do
       click_on "Log in with Strava"
     end
     expect(current_path).to eq(root_path)

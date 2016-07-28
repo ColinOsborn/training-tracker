@@ -1,0 +1,23 @@
+<%= render partial: "shared/navbar" %>
+<div class="container">
+  <div class="jumbotron">
+    <h1>Athlete Dashboard</h1>
+      <h3>Athlete: <%= current_user.name %></h3>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel panel-body col-md-4">
+      <h4><strong>Location</strong></h4>
+      <h4>State: <%= current_user.state %></h4>
+      <h5>Hometown: <%= current_user.city %></h5>
+      <h5>Email: <%= current_user.email %></h5>
+    </div>
+    <div class="panel panel-body col-md-4">
+      <h4><strong>Vitals</strong></h4>
+      <h5>Sex: <%= current_user.sex %></h5>
+      <h5>Weight: <%= (current_user.weight).round(2) %> Kilograms</h5>
+      <h5>FTP: <%= current_user.ftp %></h5>
+      <h5>Threshold Watts/Kilo: <%= (current_user.ftp/current_user.weight).round(2) %> </h5>
+    </div>
+  </div>
+</div>

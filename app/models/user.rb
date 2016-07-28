@@ -4,8 +4,10 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :user_id, presence: true
   validates :token, presence: true
+  validates :city, presence: true
+  validates :state, presence: true
 
-  
+
   def self.find_or_create_from_auth(auth)
     user = User.find_or_create_by(provider: auth[:provider], user_id: auth[:uid])
     user_hash(user, auth)

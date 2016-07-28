@@ -25,6 +25,8 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'strava-api-v3'
+gem 'shoulda-matchers'
+gem 'database_cleaner'
 gem 'figaro'
 gem 'faraday'
 gem 'launchy'

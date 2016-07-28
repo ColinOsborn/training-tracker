@@ -19,8 +19,8 @@ class User < ApplicationRecord
     user[:token] =             auth[:credentials][:token]
     user[:provider] =          auth[:provider]
     user[:name] =              auth[:info][:name]
-    user[:firstname] =         auth[:info][:first_name]
-    user[:lastname] =          auth[:info][:last_name]
+    user[:first_name] =         auth[:info][:first_name]
+    user[:last_name] =          auth[:info][:last_name]
     user[:email] =             auth[:info][:email]
     user[:profile_picture] =   auth[:info][:profile]
     user[:city] =              auth[:extra][:raw_info][:city]
@@ -30,5 +30,6 @@ class User < ApplicationRecord
     user[:ftp] =               auth[:extra][:raw_info][:ftp]
     user[:bikes] =             auth[:info][:bikes]
   end
+
 
 end

@@ -1,13 +1,13 @@
 class User < ApplicationRecord
 
   def self.find_or_create_from_auth(auth)
-    user = User.find_by(provider: auth[:provider], user_id: aith[:uid])
+    user = User.find_by(provider: auth[:provider], user_id: auth[:uid])
     user_hash(user, auth)
     user.save
     return user
   end
 
-  def user_hash(user, auth)
+  def self.user_hash(user, auth)
     user.token =            auth[:credentials][:token]
     user.firstname =        auth[:info][:firstname]
     user.lastname =         auth[:info][:lastname]

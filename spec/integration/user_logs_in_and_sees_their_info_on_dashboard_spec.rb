@@ -10,8 +10,6 @@ RSpec.feature 'user logs in an sees their info on the dashboard' do
     end
 
     expect(current_path).to eq(dashboard)
-    expect(page).to have_content(user.firstname)
-    expect(page).to have_content(user.lastname)
-    expect(page).to have_content(user.profile_picture)
+    expect(page).to have_content(user.name)
   end
 end

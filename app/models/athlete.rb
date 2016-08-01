@@ -1,5 +1,11 @@
 class Athlete < OpenStruct
 
+  # def initialize(new_athlete_hash)
+  #   @first_name = new_athlete_hash["firstname"]
+  #   @last_name = new_athlete_hash["lastname"]
+  #   @name = new_athlete_hash["username"]
+  # end
+
   def self.service
     @@service ||= AthleteService.new
   end

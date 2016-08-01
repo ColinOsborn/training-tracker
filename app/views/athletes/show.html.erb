@@ -1,3 +1,7 @@
 <h1>Athlete Show page</h1>
-<h2><%= @athlete.firstname %><h2>
-  
+<h2><%= @athlete.username %><h2>
+
+  <h3><%= @athlete.city %></h3>
+  <h3><%= @athlete.country %></h3>
+  <h4><%= @athlete.sex %></h4>
+  <%= image_tag("#{@athlete.profile}") %>

@@ -30,6 +30,4 @@ class User < ApplicationRecord
     user[:ftp] =               auth[:extra][:raw_info][:ftp]
     user[:bikes] =             auth[:info][:bikes]
   end
-
-
 end

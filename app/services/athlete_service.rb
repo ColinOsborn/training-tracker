@@ -10,9 +10,20 @@ class AthleteService
     parse(response)
   end
 
-  def get_pro
-    response = @connection.get("/api/v3/athletes/#{pro_user_id}.json")
+  def get_athlete_stats(user_id)
+    response = @connection.get("/api/v3/athletes/#{user_id}/stats.json")
     parse(response)
+  end
+
+  def get_athlete_zones(user_id)
+    response = @connection.get("/api/v3/athlete/zones.json")
+    parse(response)
+  end
+
+  def get_athlete_rides(activity_id)
+    response = @connection.get("/api/v3/activity/#{activity_id}.json")
+    parse(response)
+    byebug
   end
 
   def pro_user_id

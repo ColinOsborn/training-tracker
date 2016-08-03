@@ -15,4 +15,13 @@ class Athlete < OpenStruct
     Athlete.new(athlete_hash)
   end
 
+  def self.stats(user_id)
+    athlete_hash = service.get_athlete_stats(user_id)
+    Athlete.new(athlete_hash)
+  end
+
+  # def self.watts_per_kilo
+  #   (current_user.ftp/current_user.weight).round(2)
+  # end
+
 end

@@ -12,8 +12,9 @@
   <div class="panel panel-default">
     <div class="panel-heading"><%=  @goal.title %></div>
     <div class="panel-body">
-      <h5>Miles: <%= @goal.miles %></h5>
-      <h5>Description: <%= @goal.description %></h5>
+      <h4>Miles: <%= @goal.miles %></h4>
+      <h4>Description: <%= @goal.description %></h4>
+      <h5> You need to ride <%= @goal.mileage(@goal.miles)%> miles daily to complete your goal. </h5>
     </div>
   </div>
   <div class="well well-sm">

@@ -7,7 +7,6 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rails'
 require 'vcr'
-# require 'rack_session_access/capybara'
 
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/cassettes'
@@ -26,8 +25,6 @@ Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
 module OmniauthMod
   def mock_omniauth
-    # The mock_auth configuration allows you to set per-provider (or default)
-    # authentication hashes to return during integration testing.
     OmniAuth.config.test_mode = true
     OmniAuth.config.mock_auth[:strava] = OmniAuth::AuthHash.new({
       "provider"=>"strava",

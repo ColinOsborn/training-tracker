@@ -16,34 +16,53 @@ Shoulda::Matchers.configure do |config|
   end
 end
 
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+
+module OmniauthMod
+  def mock_omniauth
+    # The mock_auth configuration allows you to set per-provider (or default)
+    # authentication hashes to return during integration testing.
+    OmniAuth.config.test_mode = true
+    OmniAuth.config.mock_auth[:strava] = OmniAuth::AuthHash.new({
+      "provider"=>"strava",
+     "uid"=>"12657",
+     "info"=>{"name"=>"Colin Osborn", "first_name"=>"Colin", "last_name"=>"Osborn", "email"=>"Colin.Osborn@gmail.com", "location"=>" "},
+     "credentials"=>{"token"=> ENV['STRAVA_CLIENT_SECRET'], "expires"=>false},
+     "extra"=>
+      {"raw_info"=>
+        {"id"=>12657,
+         "username"=>"colinosborn",
+         "resource_state"=>3,
+         "firstname"=>"Colin",
+         "lastname"=>"Osborn",
+         "profile_medium"=>"https://lh4.googleusercontent.com/-xXqkgEoPVCc/AAAAAAAAAAI/AAAAAAAAA1M/_EEbUWVP6jY/photo.jpg",
+         "profile"=>"https://lh4.googleusercontent.com/-xXqkgEoPVCc/AAAAAAAAAAI/AAAAAAAAA1M/_EEbUWVP6jY/photo.jpg",
+         "city"=>"Carbondale",
+         "state"=>"Colorado",
+         "country"=>"USA",
+         "sex"=>"M",
+         "premium"=>false,
+         "created_at"=>"2016-08-02T06:22:41Z",
+         "updated_at"=>"2016-08-02T04:16:28Z",
+         "follower_count"=>96,
+         "friend_count"=>66,
+         "athlete_type"=>1,
+         "measurement_preference"=>"feet",
+         "email"=>"Colin.Osborn@gmail.com",
+         "weight"=>61.23,
+         "bikes"=>[{"id"=>"b2647226", "primary"=>true, "name"=>"Giant XTC Advanced", "resource_state"=>2, "distance"=>0.0}]
+        }
+      }
+    })
+  end
+end
+
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
-  # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
-
-  # If you're not using ActiveRecord, or you'd prefer not to run each of your
-  # examples within a transaction, remove the following line or assign false
-  # instead of true.
   config.use_transactional_fixtures = true
-
-  # RSpec Rails can automatically mix in different behaviours to your tests
-  # based on their file location, for example enabling you to call `get` and
-  # `post` in specs under `spec/controllers`.
-  #
-  # You can disable this behaviour by removing the line below, and instead
-  # explicitly tag your specs with their type, e.g.:
-  #
-  #     RSpec.describe UsersController, :type => :controller do
-  #       # ...
-  #     end
-  #
-  # The different available types are documented in the features, such as in
-  # https://relishapp.com/rspec/rspec-rails/docs
+  config.include(OmniauthMod)
   config.infer_spec_type_from_file_location!
-
-  # Filter lines from Rails gems in backtraces.
   config.filter_rails_from_backtrace!
-  # arbitrary gems may also be filtered via:
-  # config.filter_gems_from_backtrace("gem name")
 end

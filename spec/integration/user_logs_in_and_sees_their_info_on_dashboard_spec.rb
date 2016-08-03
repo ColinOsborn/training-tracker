@@ -1,16 +1,20 @@
 require "rails_helper"
 
 RSpec.feature 'user logs in an sees their info on the dashboard' do
-  describe "user logs into account to see their basic info" do
-    user = create(:user)
+    scenario "user logs into account to see their basic info" do
+      OmniAuth.config.mock_auth[:strava]
+      user = FactoryGirl.create(:user)
 
-    visit root_path
-    within("#login") do
-      click_on "Log in with Strava"
-    end
+      visit root_path
 
-    expect(current_path).to eq(dashboard)
-    expect(page).to have_content(user.name)
-    expect(page).to have_content(user.city)
+      expect(page).to have_content("Login with Strava")
+
+      mock_omniauth
+
+      click_on "Login with Strava"
+      expect(current_path).to eq(dashboard_path)
+      expect(page).to have_content("Logout")
+      expect(page).to have_content("Welcome, #{user.name}")
+      expect(page).to have_content("Athlete Stats")
   end
 end

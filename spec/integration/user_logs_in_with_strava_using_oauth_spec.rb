@@ -16,7 +16,7 @@ RSpec.feature "user logs in with strava" do
     click_on "Login with Strava"
     expect(current_path).to eq(dashboard_path)
     expect(page).to have_content("Logout")
-    expect(page).to have_content("Welcome, #{user.name}")
+    expect(page).to have_content("#{user.name}")
     expect(page).to have_content("Athlete Stats")
   end
 end

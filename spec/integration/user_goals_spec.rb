@@ -14,7 +14,7 @@ RSpec.feature 'user logs in and sees their goals on dashboard' do
       click_on "Login with Strava"
       expect(current_path).to eq(dashboard_path)
       expect(page).to have_content("Logout")
-      expect(page).to have_content("Welcome, #{user.name}")
+      expect(page).to have_content("#{user.name}")
       expect(page).to have_content("Athlete Stats")
       expect(page).to have_content("Friends & Followers")
       expect(page).to have_content("Goals")

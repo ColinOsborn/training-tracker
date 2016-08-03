@@ -5,4 +5,8 @@ class AthletesController < ApplicationController
     @athlete_stats = Athlete.stats(params[:id])
   end
 
+  def index
+    @users = User.all
+  end
+
 end

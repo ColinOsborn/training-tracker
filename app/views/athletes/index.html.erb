@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1>Friends Stats</h1>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <% @users.each do |user| %>
+  <div class="panel-heading"><%= user.name %></div>
+  <div class="panel-body">
+    <h5>City: <%= user.city %></h5>
+    <h5>Location: <%= user.state %></h5>
+    <h5>Sex: <%= user.sex %></h5>
+    <h5> FTP: <%= user.ftp %></h5>
+    <h5>Weight: <%= user.weight %></h5>
+    <h5>Bike: <%= user.bikes %></h5>
+  </div>
+  <% end %>
+</div>

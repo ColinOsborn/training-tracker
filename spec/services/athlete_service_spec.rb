@@ -17,4 +17,26 @@ describe AthleteService do
       end
     end
   end
+
+  context "#get_athlete_stats" do
+    it "returns an athletes stat info" do
+      VCR.use_cassette("get_athlete_stats") do
+        athlete = AthleteService.new.get_athlete_stats("175260")
+
+        expect(athlete["biggest_ride_distance"]).to eq(205430.0)
+        expect(athlete["biggest_climb_elevation_gain"]).to eq(1330.9)
+        expect(athlete["recent_ride_totals"]["count"]).to eq(6)
+        expect(athlete["recent_ride_totals"]["distance"]).to eq(111559.20166015625)
+        expect(athlete["recent_ride_totals"]["moving_time"]).to eq(17505)
+        expect(athlete["recent_ride_totals"]["elapsed_time"]).to eq(21589)
+        expect(athlete["recent_ride_totals"]["elevation_gain"]).to eq(1573.4475059509277)
+        expect(athlete["recent_ride_totals"]["achievement_count"]).to eq(9)
+        expect(athlete["ytd_ride_totals"]["count"]).to eq(6)
+        expect(athlete["ytd_ride_totals"]["distance"]).to eq(111560)
+        expect(athlete["ytd_ride_totals"]["moving_time"]).to eq(17505)
+        expect(athlete["ytd_ride_totals"]["elapsed_time"]).to eq(21589)
+        expect(athlete["ytd_ride_totals"]["elevation_gain"]).to eq(1574)
+      end
+    end
+  end
 end

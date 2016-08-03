@@ -6,8 +6,14 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rails'
+require 'vcr'
 # require 'rack_session_access/capybara'
 
+VCR.configure do |c|
+  c.cassette_library_dir = 'spec/cassettes'
+  c.hook_into :webmock
+  c.configure_rspec_metadata!
+end
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|

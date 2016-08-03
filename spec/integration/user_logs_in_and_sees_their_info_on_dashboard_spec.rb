@@ -34,7 +34,8 @@ RSpec.feature 'user logs in an sees their info on the dashboard' do
     expect(page).to have_content("Logout")
     expect(page).to have_content("Welcome, #{user.name}")
     expect(page).to have_content("Athlete Stats")
-    expect(page).to have_content("Friends")
+    expect(page).to have_content("Friends & Followers")
+    expect(page).to have_content("Goals")
 
     click_on "Friends"
     expect(current_path).to eq(athletes_path)

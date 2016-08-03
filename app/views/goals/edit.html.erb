@@ -1,0 +1,21 @@
+<%= render partial: "shared/navbar" %>
+<body background="https://4.bp.blogspot.com/-R2QP-IFFJnQ/V6I3tTBxdmI/AAAAAAAAFc0/OJA9z8_QozYtcz5_IZAKDqHsFtVw35MlwCLcB/s1600/photo-1464591799145-33a1e999683d.jpg">
+<div class="container">
+  <div class="jumbotron">
+    <%= @goal.title %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="panel panel-default">
+    <%= form_for(@goal) do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.label :miles %>
+    <%= f.text_field :miles %>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+    <%= f.submit %>
+    <% end %>
+  </div>
+</div>

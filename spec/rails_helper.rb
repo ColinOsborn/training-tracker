@@ -6,8 +6,13 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rails'
-# require 'rack_session_access/capybara'
+require 'vcr'
 
+VCR.configure do |c|
+  c.cassette_library_dir = 'spec/cassettes'
+  c.hook_into :webmock
+  c.configure_rspec_metadata!
+end
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
@@ -20,8 +25,6 @@ Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
 module OmniauthMod
   def mock_omniauth
-    # The mock_auth configuration allows you to set per-provider (or default)
-    # authentication hashes to return during integration testing.
     OmniAuth.config.test_mode = true
     OmniAuth.config.mock_auth[:strava] = OmniAuth::AuthHash.new({
       "provider"=>"strava",

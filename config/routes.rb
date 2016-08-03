@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   delete "/logout",               to: "sessions#destroy"
   get '/dashboard',               to: "dashboard#show"
   resources :athletes, only: [:show, :index]
+  resources :goals
 end

@@ -1,0 +1,22 @@
+<%= render partial: "shared/navbar" %>
+<body background="https://4.bp.blogspot.com/-R2QP-IFFJnQ/V6I3tTBxdmI/AAAAAAAAFc0/OJA9z8_QozYtcz5_IZAKDqHsFtVw35MlwCLcB/s1600/photo-1464591799145-33a1e999683d.jpg">
+
+<div class="container">
+  <div class="jumbotron">
+
+    <h2>Goal: <%= @goal.id %></h2>
+  </div>
+</div>
+
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading"><%=  @goal.title %></div>
+    <div class="panel-body">
+      <h5>Miles: <%= @goal.miles %></h5>
+      <h5>Description: <%= @goal.description %></h5>
+    </div>
+  </div>
+  <div class="well well-sm">
+    <%= link_to "Edit Goal", edit_goal_path %> - <%= link_to "Add Another Goal", new_goal_path %>
+  </div>
+</div>

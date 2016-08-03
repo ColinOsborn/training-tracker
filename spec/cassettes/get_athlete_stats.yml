@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.strava.com/api/v3/athletes/175260/stats.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Authorization:
+      - Bearer 3dc61d2c7f1e1f7c171f2f18da0f2364ef052bfa
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Wed, 03 Aug 2016 19:57:57 GMT
+      Etag:
+      - W/"c7785c538cb62cba37555b1af09cb85d"
+      Set-Cookie:
+      - _strava3_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFVEkiJWJmMWNjMmJjYmNjYzE5MWIwYzgwZTcyMTMxODdjYTRiBjsAVEkiEGNsZWFyX2NsaWNrBjsARlQ%3D--1fe2fadea1b640f8bdbebd57e06af43a1e66e6d4;
+        domain=strava.com; path=/; HttpOnly
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - DENY
+      X-Ratelimit-Limit:
+      - '600,30000'
+      X-Ratelimit-Usage:
+      - '2,73'
+      X-Request-Id:
+      - d0569d2a2ee9ecfd92b627672eb4dc12
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '321'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"biggest_ride_distance":205430.0,"biggest_climb_elevation_gain":1330.9,"recent_ride_totals":{"count":6,"distance":111559.20166015625,"moving_time":17505,"elapsed_time":21589,"elevation_gain":1573.4475059509277,"achievement_count":9},"recent_run_totals":{"count":0,"distance":0.0,"moving_time":0,"elapsed_time":0,"elevation_gain":0.0,"achievement_count":0},"recent_swim_totals":{"count":0,"distance":0.0,"moving_time":0,"elapsed_time":0,"elevation_gain":0.0,"achievement_count":0},"ytd_ride_totals":{"count":6,"distance":111560,"moving_time":17505,"elapsed_time":21589,"elevation_gain":1574},"ytd_run_totals":{"count":0,"distance":0,"moving_time":0,"elapsed_time":0,"elevation_gain":0},"ytd_swim_totals":{"count":0,"distance":0,"moving_time":0,"elapsed_time":0,"elevation_gain":0},"all_ride_totals":{"count":460,"distance":18235767,"moving_time":2773338,"elapsed_time":4132006,"elevation_gain":262793},"all_run_totals":{"count":3,"distance":15562,"moving_time":6053,"elapsed_time":7628,"elevation_gain":367},"all_swim_totals":{"count":0,"distance":0,"moving_time":0,"elapsed_time":0,"elevation_gain":0}}'
+    http_version: 
+  recorded_at: Wed, 03 Aug 2016 19:57:57 GMT
+recorded_with: VCR 3.0.3

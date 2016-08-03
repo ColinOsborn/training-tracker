@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.strava.com/api/v3/athletes/175260.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Authorization:
+      - Bearer 3dc61d2c7f1e1f7c171f2f18da0f2364ef052bfa
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Wed, 03 Aug 2016 19:42:33 GMT
+      Etag:
+      - W/"7584d4db55f8914068eab738007016fd"
+      Set-Cookie:
+      - _strava3_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFVEkiJTFiODRlOTg1YTNiNjliN2RiYmNmNjBkOThkOTVmNDdkBjsAVEkiEGNsZWFyX2NsaWNrBjsARlQ%3D--d4f01e86158666852083fcbdfdeab62736b32542;
+        domain=strava.com; path=/; HttpOnly
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - DENY
+      X-Ratelimit-Limit:
+      - '600,30000'
+      X-Ratelimit-Usage:
+      - '1,71'
+      X-Request-Id:
+      - bd909d440fe2b887234f92652d274710
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '636'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":175260,"username":"colin_osborn","resource_state":3,"firstname":"Colin","lastname":"Osborn","city":"Carbondale","state":"Colorado","country":"United
+        States","sex":"M","premium":false,"created_at":"2011-11-29T04:13:19Z","updated_at":"2016-08-02T19:18:48Z","badge_type_id":0,"profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/athletes/175260/4639410/4/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/athletes/175260/4639410/4/large.jpg","friend":null,"follower":null,"follower_count":94,"friend_count":66,"mutual_friend_count":0,"athlete_type":0,"date_preference":"%m/%d/%Y","measurement_preference":"feet","clubs":[],"email":"colin.osborn@gmail.com","ftp":300,"weight":61.2348,"bikes":[{"id":"b1963018","primary":false,"name":"Giant
+        Anthem Advanced 27.5 SL 0 Team","resource_state":2,"distance":234557.0},{"id":"b1903098","primary":false,"name":"Giant
+        Reign","resource_state":2,"distance":62791.0},{"id":"b1963016","primary":false,"name":"Giant
+        TCR Advanced SL ","resource_state":2,"distance":876853.0},{"id":"b1960747","primary":true,"name":"Giant
+        XTC Advanced SL Team","resource_state":2,"distance":323598.0},{"id":"b150770","primary":false,"name":"Madone","resource_state":2,"distance":9969599.0}],"shoes":[{"id":"g225361","primary":true,"name":"Salomon
+        SpeedCross  3 CS","resource_state":2,"distance":15562.0}]}'
+    http_version: 
+  recorded_at: Wed, 03 Aug 2016 19:42:33 GMT
+recorded_with: VCR 3.0.3

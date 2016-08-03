@@ -26,11 +26,6 @@ class AthleteService
     byebug
   end
 
-  def pro_user_id
-    ["524774", "119832", "723518", "370256", "186522", "320095", "2483643", "663394"].sample
-    # 0 = Flo, 1 = RF, 2 = CF, 3 = KB, 4 = LTD, 5 = AV, 6 = EL, 7 = NS
-  end
-
   def parse(response)
     JSON.parse(response.body)
   end

@@ -1,12 +1,41 @@
 <%= render partial: "shared/navbar" %>
-<div class="container">
-  <div class="jumbotron">
-      <h2> Welcome, <%= current_user.name %>!</h2>
+<body background="https://4.bp.blogspot.com/-o2fre0YdThA/V6GJEDvgQlI/AAAAAAAAFcE/chSIHexPGVQ2wRDD_AXnqAuQIco4jIjTgCLcB/s1600/photo-1435226148432-67c26cc5cbaf.jpg">
+
+  <div class="container">
+    <div class="jumbotron">
+      <h2 class="text-center">Athlete Breakdown</h2>
+        <h3><%= current_user.name %></h3>
+          <%= image_tag("#{current_user.profile_picture}") %>
+    </div>
+
+  <div class="container">
+    <div class="container col-md-2">
+    </div>
+    <div class="container col-md-8 text-center">
+      <div class="panel panel-default">
+        <div class="panel panel-body">
+          <h4 class="text-center"><%= link_to "Friends & Followers", athletes_path %> - <%= link_to "Athlete Stats", "/athletes/#{current_user.user_id}" %> - <%= "Goals" %></h4>
+        </div>
+      </div>
+    </div>
+    <div class="container col-md-2">
+    </div>
   </div>
 
-
-  <div class="panel panel-default">
-    <div class="panel panel-body">
-      <h4 class="text-center"><%= link_to "Athlete Stats", "/athletes/#{current_user.user_id}" %></h4>
+<div class="">
+    <div class="panel panel-default">
+      <div class="panel panel-body col-md-3">
+        <h4><strong>Location</strong></h4>
+        <h4>State: <%= current_user.state %></h4>
+        <h5>Hometown: <%= current_user.city %></h5>
+        <h5>Email: <%= current_user.email %></h5>
+      </div>
+      <div class="panel panel-body col-md-4">
+        <h4><strong>Vitals</strong></h4>
+        <h5>Weight: <%= (current_user.weight).round(2) %> Kilograms</h5>
+        <h5>FTP: <%= current_user.ftp %></h5>
+        <h5>Threshold Watts/Kilo: <%= (current_user.ftp/current_user.weight).round(2) %> </h5>
+      </div>
     </div>
+  </div>
 </div>

@@ -1,0 +1,22 @@
+<%= render partial: "shared/navbar" %>
+<body background="https://4.bp.blogspot.com/-B7HBS_D11PM/V6GJDjXwSnI/AAAAAAAAFcA/YueoGogTH8gS_UU9tfdHeu1Ztr0s01LNACLcB/s1600/11259939_10209013000708563_2983417393356912232_o.jpg">
+<div class="container">
+  <div class="jumbotron">
+    <h2 class="text-center">Friends Stats</h2>
+  </div>
+</div>
+<br>
+<div class="panel panel-default">
+  <% @users.each do |user| %>
+  <div class="panel-heading"><%=link_to user.name, athlete_path(user.user_id) %></div>
+  <div class="panel-body">
+    <h5>City: <%= user.city %></h5>
+    <h5>Location: <%= user.state %></h5>
+    <h5>Sex: <%= user.sex %></h5>
+    <h5> FTP: <%= user.ftp %></h5>
+    <h5>Weight: <%= user.weight %></h5>
+    <h5>Bike: <%= user.bikes %></h5>
+  </div>
+  <% end %>
+</div>
+<br>

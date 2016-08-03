@@ -39,4 +39,18 @@ describe AthleteService do
       end
     end
   end
+
+  context "#get_athlete_rides" do
+    it "returns an athletes ride info" do
+      VCR.use_cassette("get_athlete_rides") do
+        rides = AthleteService.new.get_athlete_rides("660611892#16179345274")
+
+        expect(rides["id"]).to eq(660611892)
+        expect(rides["athlete"]["id"]).to eq(175260)
+        expect(rides["name"]).to eq("Golden Mountain Biking")
+        expect(rides["distance"]).to eq(22941.4)
+        expect(rides["total_elevation_gain"]).to eq(887.7)
+      end
+    end
+  end
 end

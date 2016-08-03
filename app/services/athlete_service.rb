@@ -15,15 +15,9 @@ class AthleteService
     parse(response)
   end
 
-  def get_athlete_zones(user_id)
-    response = @connection.get("/api/v3/athlete/zones.json")
-    parse(response)
-  end
-
   def get_athlete_rides(activity_id)
-    response = @connection.get("/api/v3/activity/#{activity_id}.json")
+    response = @connection.get("/api/v3/activities/#{activity_id}.json")
     parse(response)
-    byebug
   end
 
   def parse(response)

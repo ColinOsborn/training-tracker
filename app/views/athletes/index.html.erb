@@ -6,6 +6,8 @@
   </div>
 </div>
 <br>
+<div class="container">
+
 <div class="panel panel-default">
   <% @users.each do |user| %>
   <div class="panel-heading"><%=link_to user.name, athlete_path(user.user_id) %></div>
@@ -20,3 +22,4 @@
   <% end %>
 </div>
 <br>
+</div>

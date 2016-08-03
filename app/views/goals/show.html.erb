@@ -1,0 +1,16 @@
+<%= render partial: "shared/navbar" %>
+<div class="container">
+  <div class="jumbotron">
+
+    <h2>Goal: <%= @goal.id %></h2>
+  </div>
+</div>
+
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading"><%=  @goal.title %></div>
+    <div class="panel-body">
+      <h5>Description: <%= @goal.description %></h5>
+    </div>
+  </div>
+</div>

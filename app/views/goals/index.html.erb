@@ -1,0 +1,17 @@
+<%= render partial: "shared/navbar" %>
+<div class="container">
+  <div class="jumbotron">
+
+    <h1>Goals</h1>
+  </div>
+</div>
+
+
+<div class="panel panel-default">
+  <% @goals.each do |goal| %>
+  <div class="panel-heading"><%= link_to goal.title, goal_path(goal.id) %></div>
+  <div class="panel-body">
+    <h5>Description: <%= goal.description %></h5>
+  </div>
+  <% end %>
+</div>

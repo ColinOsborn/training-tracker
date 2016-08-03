@@ -2,18 +2,16 @@
 <div class="container">
   <div class="jumbotron">
     <h2 class="text-center">Athlete Breakdown</h2>
-      <h3><%= current_user.name %></h3>
+      <h3><%= @athlete.firstname%> <%=@athlete.lastname%></h3>
         <%= image_tag("#{@athlete.profile}") %>
   </div>
 
   <div class="panel panel-default">
     <div class="panel panel-body col-md-3">
       <h4><strong>Location</strong></h4>
-      <h4>State: <%= current_user.state %></h4>
-      <h5>Hometown: <%= current_user.city %></h5>
-      <h4><%= @athlete.country %></h4>
-      <h5><%= @athlete.city %></h5>
-      <h5>Email: <%= current_user.email %></h5>
+      <h4>State: <%= @athlete.state %></h4>
+      <h5>Hometown: <%= @athlete.city %></h5>
+      <h4>Country: <%= @athlete.country %></h4>
     </div>
     <div class="panel panel-body col-md-4">
       <h4><strong>Vitals</strong></h4>

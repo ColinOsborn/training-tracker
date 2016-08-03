@@ -8,7 +8,7 @@
 <br>
 <div class="panel panel-default">
   <% @users.each do |user| %>
-  <div class="panel-heading"><%= user.name %></div>
+  <div class="panel-heading"><%=link_to user.name, athlete_path(user.user_id) %></div>
   <div class="panel-body">
     <h5>City: <%= user.city %></h5>
     <h5>Location: <%= user.state %></h5>

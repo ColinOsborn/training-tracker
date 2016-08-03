@@ -1,4 +1,5 @@
 <%= render partial: "shared/navbar" %>
+<body background="https://4.bp.blogspot.com/-R2QP-IFFJnQ/V6I3tTBxdmI/AAAAAAAAFc0/OJA9z8_QozYtcz5_IZAKDqHsFtVw35MlwCLcB/s1600/photo-1464591799145-33a1e999683d.jpg">
 <div class="container">
   <div class="jumbotron">
 
@@ -6,12 +7,13 @@
   </div>
 </div>
 
-
-<div class="panel panel-default">
-  <% @goals.each do |goal| %>
-  <div class="panel-heading"><%= link_to goal.title, goal_path(goal.id) %></div>
-  <div class="panel-body">
-    <h5>Description: <%= goal.description %></h5>
+<div class="container">
+  <div class="panel panel-default">
+    <% @goals.each do |goal| %>
+    <div class="panel-heading"><%= link_to goal.title, goal_path(goal.id) %></div>
+    <div class="panel-body">
+      <h5>Description: <%= goal.description %></h5>
+    </div>
+    <% end %>
   </div>
-  <% end %>
 </div>

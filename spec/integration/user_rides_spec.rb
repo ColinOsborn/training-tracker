@@ -31,5 +31,6 @@ RSpec.feature 'user logs in and sees their rides on dashboard' do
       expect(page).to have_content("14.25")
       expect(page).to have_content("#{ride.total_elevation_gain}")
       expect(page).to have_content("97.4")
+      expect(page).to have_content("2910.11 feet")
     end
   end

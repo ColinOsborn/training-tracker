@@ -16,6 +16,7 @@
     <h5>Distance: <%= meter_to_mile(ride.distance) %> mi</h5>
     <h5>Total Ride Time: <%= second_to_minute(ride.moving_time) %> min</h5>
     <h5>Total Elevation Gain: <%= ride.total_elevation_gain %> meters</h5>
+    <h5>Total Elevation Gain in Feet: <%= meter_to_foot(ride.total_elevation_gain) %> feet</h5>
   </div>
   <% end %>
 </div>

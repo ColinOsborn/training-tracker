@@ -27,6 +27,7 @@
         <h5>Total Rides: <%= @athlete_stats.recent_ride_totals["count"] %></h5>
         <h5>Distance: <%= meter_to_mile(@athlete_stats.recent_ride_totals["distance"]) %> mi</h5>
         <h5>Elevation Gain: <%= @athlete_stats.recent_ride_totals["elevation_gain"].round(2) %> meters</h5>
+        <h5>Elevation Gain: <%= meter_to_foot(@athlete_stats.recent_ride_totals["elevation_gain"]) %> feet</h5>
       </div>
       <div class="panel panel-body">
         <h4>Ride Stats and Totals</h4>

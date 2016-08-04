@@ -1,10 +1,12 @@
 <%= render partial: "shared/navbar" %>
+<body background="https://4.bp.blogspot.com/-NUD3Mp-DGxU/V6MLoOlVgeI/AAAAAAAAFdQ/CZC9unb-byQOOVPlITpHp-vDm4ifIWJpgCLcB/s1600/photo-1456404936811-e17d118812ff.jpg">
 <div class="container">
   <div class="jumbotron">
     <h2>Ride</h2>
   </div>
 </div>
 
+<div class="container">
 <div class="panel panel-default">
   <div class="panel panel-body">
     <h2><%= @ride.name %></h2>
@@ -15,5 +17,18 @@
       <h5>Total Elevation Gain: <%= @ride.total_elevation_gain %></h5>
       <h5>date: <%= @ride.start_date %></h5>
     </div>
+  </div>
+</div>
+</div>
+
+<div class="container">
+  <div class="col-md-4">
+
+  </div>
+  <div class="panel col-md-4 text-center">
+    <h5 class="text-center"><%= link_to "Rides", rides_path %></h5>
+  </div>
+  <div class="col-md-4">
+
   </div>
 </div>

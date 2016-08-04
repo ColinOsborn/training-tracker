@@ -1,9 +1,12 @@
 <%= render partial: "shared/navbar" %>
+<body background="https://4.bp.blogspot.com/-NUD3Mp-DGxU/V6MLoOlVgeI/AAAAAAAAFdQ/CZC9unb-byQOOVPlITpHp-vDm4ifIWJpgCLcB/s1600/photo-1456404936811-e17d118812ff.jpg">
 <div class="container">
   <div class="jumbotron">
     <h2>All Rides</h2>
   </div>
 </div>
+
+<div class="container">
 
 <div class="panel panel-default">
   <% @rides.each do |ride| %>
@@ -13,8 +16,8 @@
     <h5>Distance: <%= ride.distance %></h5>
     <h5>Total Ride Time: <%= ride.moving_time %></h5>
     <h5>Total Elevation Gain: <%= ride.total_elevation_gain %></h5>
-    <h5>date: <%= ride.start_date %></h5>
   </div>
   <% end %>
 </div>
 <br>
+</div>

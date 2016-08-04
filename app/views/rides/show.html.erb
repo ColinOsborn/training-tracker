@@ -12,10 +12,9 @@
     <h2><%= @ride.name %></h2>
     <div class="panel-body">
       <h5>description: <%= @ride.description %></h5>
-      <h5>Distance: <%= @ride.distance %></h5>
-      <h5>Total Ride Time: <%= @ride.moving_time %></h5>
-      <h5>Total Elevation Gain: <%= @ride.total_elevation_gain %></h5>
-      <h5>date: <%= @ride.start_date %></h5>
+      <h5>Distance: <%= meter_to_mile(@ride.distance) %> mi</h5>
+      <h5>Total Ride Time: <%= second_to_minute(@ride.moving_time) %> min</h5>
+      <h5>Total Elevation Gain: <%= @ride.total_elevation_gain %> meters</h5>
     </div>
   </div>
 </div>

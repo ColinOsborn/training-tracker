@@ -23,6 +23,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
+gem 'rails-controller-testing'
 gem 'twilio-ruby'
 gem 'strava-api-v3'
 gem 'shoulda-matchers'

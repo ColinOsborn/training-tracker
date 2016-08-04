@@ -8,4 +8,5 @@ RSpec.describe Goal, type: :model do
       result = goal.mileage(miles)
       expect(result).to eq(18)
   end
+    it {should belong_to :user}
 end

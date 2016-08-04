@@ -20,13 +20,21 @@
       <h5>FTP: <%= current_user.ftp %></h5>
       <h5>Threshold Watts/Kilo: <%= (current_user.ftp/current_user.weight).round(2) %> </h5>
     </div>
+    <div class="panel panel-body col-md-3">
+      <h4>Most Recent Ride Activity/Totals:</h4>
+      <h5>Total Rides: <%= @athlete_stats.recent_ride_totals.count %></h5>
+      <h5>Distance: <%= @athlete_stats.recent_ride_totals["distance"].round(2) %></h5>
+      <h5>Elevation Gain: <%= @athlete_stats.recent_ride_totals["elevation_gain"].round(2) %></h5>
+    </div>
     <div class="panel panel-body col-md-4">
       <h3>Ride Stats and Totals</h3>
         <h5>Biggest Ride Distance: <%= @athlete_stats.biggest_ride_distance %></h5>
         <h5>Biggest Elevation Gain: <%= @athlete_stats.biggest_climb_elevation_gain %></h5>
-        <h5>Most Recent Ride Activity/Totals: <%= @athlete_stats.recent_ride_totals %></h5>
-        <h5>Year-to-date totals: <%= @athlete_stats.ytd_ride_totals %></h5>
-        <h5>All Ride Totals: <%= @athlete_stats.all_ride_totals %></h5>
+        <h3>All-Time Ride Totals<h3>
+        <h5>Total Rides: <%= @athlete_stats.all_ride_totals["count"] %></h5>
+        <h5>Total Distance: <%= meter_to_mile(@athlete_stats.all_ride_totals["distance"]) %> miles</h5>
+        <h5>Total Ride Time: <%= second_to_minute(@athlete_stats.all_ride_totals["moving_time"]) %> min</h5>
+        <h5>Total Elevation Climbed: <%= meter_to_foot(@athlete_stats.all_ride_totals["elevation_gain"]) %> feet</h5>
     </div>
   </div>
 </div>

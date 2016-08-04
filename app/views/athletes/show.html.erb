@@ -1,40 +1,45 @@
 <%= render partial: "shared/navbar" %>
+<body background="https://4.bp.blogspot.com/-B7HBS_D11PM/V6GJDjXwSnI/AAAAAAAAFcA/YueoGogTH8gS_UU9tfdHeu1Ztr0s01LNACLcB/s1600/11259939_10209013000708563_2983417393356912232_o.jpg">
 <div class="container">
   <div class="jumbotron">
-    <h2 class="text-center">Athlete Breakdown</h2>
+    <h2 class="text-center">Athlete Stats Breakdown</h2>
       <h3><%= @athlete.firstname%> <%=@athlete.lastname%></h3>
         <%= image_tag("#{@athlete.profile}") %>
   </div>
 
-  <div class="panel panel-default">
-    <div class="panel panel-body col-md-3">
-      <h4><strong>Location</strong></h4>
-      <h4>State: <%= @athlete.state %></h4>
-      <h5>Hometown: <%= @athlete.city %></h5>
-      <h4>Country: <%= @athlete.country %></h4>
-    </div>
-    <div class="panel panel-body col-md-4">
-      <h4><strong>Vitals</strong></h4>
-      <h5><%= @athlete.sex %></h5>
-      <h5>Weight: <%= (current_user.weight).round(2) %> Kilograms</h5>
-      <h5>FTP: <%= current_user.ftp %></h5>
-      <h5>Threshold Watts/Kilo: <%= (current_user.ftp/current_user.weight).round(2) %> </h5>
-    </div>
-    <div class="panel panel-body col-md-3">
-      <h4>Most Recent Ride Activity/Totals:</h4>
-      <h5>Total Rides: <%= @athlete_stats.recent_ride_totals.count %></h5>
-      <h5>Distance: <%= @athlete_stats.recent_ride_totals["distance"].round(2) %></h5>
-      <h5>Elevation Gain: <%= @athlete_stats.recent_ride_totals["elevation_gain"].round(2) %></h5>
-    </div>
-    <div class="panel panel-body col-md-4">
-      <h3>Ride Stats and Totals</h3>
-        <h5>Biggest Ride Distance: <%= @athlete_stats.biggest_ride_distance %></h5>
-        <h5>Biggest Elevation Gain: <%= @athlete_stats.biggest_climb_elevation_gain %></h5>
-        <h3>All-Time Ride Totals<h3>
-        <h5>Total Rides: <%= @athlete_stats.all_ride_totals["count"] %></h5>
-        <h5>Total Distance: <%= meter_to_mile(@athlete_stats.all_ride_totals["distance"]) %> miles</h5>
-        <h5>Total Ride Time: <%= second_to_minute(@athlete_stats.all_ride_totals["moving_time"]) %> min</h5>
-        <h5>Total Elevation Climbed: <%= meter_to_foot(@athlete_stats.all_ride_totals["elevation_gain"]) %> feet</h5>
+  <div class="container">
+    <div class="panel panel-default">
+      <div class="panel panel-body">
+        <h4><strong>Location</strong></h4>
+        <h5>State: <%= @athlete.state %></h5>
+        <h5>Hometown: <%= @athlete.city %></h5>
+        <h5>Country: <%= @athlete.country %></h5>
+      </div>
+      <div class="panel panel-body">
+        <h4><strong>Vitals</strong></h4>
+        <h5><%= @athlete.sex %></h5>
+        <h5>Weight: <%= (current_user.weight).round(2) %> Kilograms</h5>
+        <h5>FTP: <%= current_user.ftp %></h5>
+        <h5>Threshold Watts/Kilo: <%= (current_user.ftp/current_user.weight).round(2) %> </h5>
+      </div>
+      <div class="panel panel-body">
+        <h4>Most Recent Ride Activity/Totals:</h4>
+        <h5>Total Rides: <%= @athlete_stats.recent_ride_totals["count"] %></h5>
+        <h5>Distance: <%= meter_to_mile(@athlete_stats.recent_ride_totals["distance"]) %> mi</h5>
+        <h5>Elevation Gain: <%= @athlete_stats.recent_ride_totals["elevation_gain"] %> meters</h5>
+      </div>
+      <div class="panel panel-body">
+        <h4>Ride Stats and Totals</h4>
+        <h5>Biggest Ride Distance: <%= meter_to_mile(@athlete_stats.biggest_ride_distance) %> miles</h5>
+        <h5>Biggest Elevation Gain: <%= second_to_minute(@athlete_stats.biggest_climb_elevation_gain) %> min</h5>
+      </div>
+      <div class="panel panel-body">
+        <h4>All-Time Ride Totals<h4>
+          <h5>Total Rides: <%= @athlete_stats.all_ride_totals["count"] %></h5>
+          <h5>Total Distance: <%= meter_to_mile(@athlete_stats.all_ride_totals["distance"]) %> miles</h5>
+          <h5>Total Ride Time: <%= second_to_minute(@athlete_stats.all_ride_totals["moving_time"]) %> min</h5>
+          <h5>Total Elevation Climbed: <%= meter_to_foot(@athlete_stats.all_ride_totals["elevation_gain"]) %> feet</h5>
+        </div>
+      </div>
     </div>
   </div>
-</div>

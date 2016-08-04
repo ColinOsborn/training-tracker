@@ -1,0 +1,23 @@
+<%= render partial: "shared/navbar" %>
+<body background="https://4.bp.blogspot.com/-NUD3Mp-DGxU/V6MLoOlVgeI/AAAAAAAAFdQ/CZC9unb-byQOOVPlITpHp-vDm4ifIWJpgCLcB/s1600/photo-1456404936811-e17d118812ff.jpg">
+<div class="container">
+  <div class="jumbotron">
+    <h2>All Rides</h2>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="panel panel-default">
+  <% @rides.each do |ride| %>
+  <div class="panel-heading"><%=link_to ride.name, ride_path(ride.id) %></div>
+  <div class="panel-body">
+    <h5>description: <%= ride.description %></h5>
+    <h5>Distance: <%= meter_to_mile(ride.distance) %> mi</h5>
+    <h5>Total Ride Time: <%= second_to_minute(ride.moving_time) %> min</h5>
+    <h5>Total Elevation Gain: <%= ride.total_elevation_gain %> meters</h5>
+  </div>
+  <% end %>
+</div>
+<br>
+</div>

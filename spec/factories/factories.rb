@@ -15,4 +15,21 @@ FactoryGirl.define do
     weight 62
     bikes "Giant Anthem Advanced"
   end
+
+  factory :goal do
+    title "Top Goal"
+    miles 100
+    description "Weekly mileage goal"
+    user
+  end
+
+  factory :ride do
+    name "Mountain Bike Ride"
+    description "Sweet ride with Friends"
+    distance 22941
+    moving_time 5844
+    total_elevation_gain 887
+    start_date "2016-07-24T17:58:35Z"
+    user
+  end
 end

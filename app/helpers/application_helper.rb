@@ -20,7 +20,4 @@ module ApplicationHelper
     formated.round(2)
   end
 
-  def watts_per_kilo()
-
-  end
 end

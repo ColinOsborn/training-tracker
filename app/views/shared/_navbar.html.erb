@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="pull-right">
     <% if current_user %>
-      <%= current_user.name %>
+      Welcome, <%= current_user.name %>!
     <!-- <%= link_to "Logout", logout_path, method: :delete %> -->
     <% else %>
       <%= link_to image_tag("https://2.bp.blogspot.com/-dxNtpD5Om_s/V5gLBDyY7DI/AAAAAAAAFaw/WnQBbU4mAuM5Y4y1CUYeESTHDqNyYn5tgCLcB/s1600/LogInWithStrava.png"), "/auth/strava" %>
@@ -12,7 +12,7 @@
   <div class="container-fluid">
 
     <div class="btn-group pull-left">
-      <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button type="button" class="btn btn-primary btn-sm dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Dashboard <span class="caret"></span>
       </button>
       <ul class="dropdown-menu">

@@ -20,8 +20,7 @@
           <button type="button" class="btn btn-default btn-danger">Fail</button>
           <button type="button" class="btn btn-default btn-primary">Complete</button>
         </div> -->
-        <%= button_to "Complete", notifications_path(:user_id => @goal.user_id), :class => "ui-button" %>
-        <!-- <%= button_to "Complete", notifications_path, :action => :create, :user_id=> session[:user_id]%> -->
+        <%= button_to "Complete", notifications_path(:user_id => @goal.user_id), :class => "ui-button btn btn-primary" %>
       </div>
     </div>
   </div>

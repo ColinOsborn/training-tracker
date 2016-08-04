@@ -12,14 +12,4 @@ describe RidesController do
       expect(assigns(:rides).first.name).to eq(ride.name)
     end
   end
-  # context 'show' do
-  #   it "displays a single ride" do
-  #     ride = FactoryGirl.create(:ride)
-  #
-  #     get(:show)
-  #
-  #     expect(response).to render_template(:show)
-  #     expect(assigns(:ride).first.description).to eq(ride.description)
-  #   end
-  # end
 end

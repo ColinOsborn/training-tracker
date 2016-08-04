@@ -16,7 +16,12 @@
       <h4>Description: <%= @goal.description %></h4>
       <h5> You need to ride <%= @goal.mileage(@goal.miles)%> miles daily to complete your goal. </h5>
       <div class="">
-        <%= button_to "Send", notifications_path, reason: :update_user %>
+        <!-- <div class="btn-group" role="group" aria-label="...">
+          <button type="button" class="btn btn-default btn-danger">Fail</button>
+          <button type="button" class="btn btn-default btn-primary">Complete</button>
+        </div> -->
+        <%= button_to "Complete", notifications_path(:user_id => @goal.user_id), :class => "ui-button" %>
+        <!-- <%= button_to "Complete", notifications_path, :action => :create, :user_id=> session[:user_id]%> -->
       </div>
     </div>
   </div>

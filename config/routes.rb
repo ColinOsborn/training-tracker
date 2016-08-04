@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get '/dashboard',               to: "dashboard#show"
   resources :athletes, only: [:show, :index]
   resources :goals
+  resources :notifications, only: [:create]
 end

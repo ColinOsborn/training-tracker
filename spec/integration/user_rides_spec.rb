@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.feature 'user logs in and sees their goals on dashboard' do
+RSpec.feature 'user logs in and sees their rides on dashboard' do
     scenario "user logs into account to see their basic info" do
       OmniAuth.config.mock_auth[:strava]
       user = FactoryGirl.create(:user)
@@ -21,5 +21,15 @@ RSpec.feature 'user logs in and sees their goals on dashboard' do
       expect(page).to have_content("Goals")
       expect(page).to have_content("Rides")
 
+      click_link "#{user.first_name}'s Rides"
+
+      expect(current_path).to eq(rides_path)
+
+      expect(page).to have_content("All Rides")
+      expect(page).to have_content("#{ride.name}")
+      expect(page).to have_content("#{ride.description}")
+      # expect(page).to have_content("#{ride.distance}")
+      # expect(page).to have_content("#{ride.total_elevation_gain}")
+      # expect(page).to have_content("#{ride.moving_time}")
     end
   end

@@ -15,8 +15,4 @@ module ApplicationHelper
     formated.round(2)
   end
 
-  def format_time(activity)
-    activity["start_date_local"].split("T").last.chop
-  end
-
 end

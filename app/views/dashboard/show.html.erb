@@ -5,11 +5,10 @@
     <div class="jumbotron">
       <h2 class="text-center">Athlete Breakdown</h2>
         <h3><%= current_user.name %></h3>
-          <%= image_tag("#{current_user.profile_picture}") %>
+            <%= image_tag("#{current_user.profile_picture}") %>
           <br>
           <h4 class="text-center"><%= link_to "Friends & Followers", athletes_path %> - <%= link_to "Athlete Stats", "/athletes/#{current_user.user_id}" %> - <%= link_to "Goals", goals_path %></h4>
     </div>
-
 
 <div class="">
     <div class="panel panel-default">
@@ -17,9 +16,8 @@
         <h4><strong>Location</strong></h4>
         <h4>State: <%= current_user.state %></h4>
         <h5>Hometown: <%= current_user.city %></h5>
-        <h5>Email: <%= current_user.email %></h5>
       </div>
-      <div class="panel panel-body col-md-4">
+      <div class="panel panel-body col-md-3">
         <h4><strong>Vitals</strong></h4>
         <h5>Weight: <%= (current_user.weight).round(2) %> Kilograms</h5>
         <h5>FTP: <%= current_user.ftp %></h5>

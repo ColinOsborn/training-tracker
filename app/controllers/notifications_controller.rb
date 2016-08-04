@@ -56,8 +56,7 @@ class NotificationsController < ApplicationController
         :from => @twilio_number,
         :to => "19706181212",
         :body => alert_message,
-        # US phone numbers can make use of an image as well.
-        # :media_url => image_url
+        
       )
       puts message.to
     end

@@ -16,7 +16,6 @@ class GoalsController < ApplicationController
     @goal = Goal.new(goal_params)
     if @goal.save
       redirect_to @goal
-      flash[:notice] = "Goal Added! Let's make it happen!"
     else
       flash[:error] = @goal.errors.full_messages.join(", ")
       render :new

@@ -33,8 +33,8 @@
         <h3>All-Time Ride Totals<h3>
         <h5>Total Rides: <%= @athlete_stats.all_ride_totals["count"] %></h5>
         <h5>Total Distance: <%= meter_to_mile(@athlete_stats.all_ride_totals["distance"]) %> miles</h5>
-        <h5>Total Ride Time: <%= @athlete_stats.all_ride_totals["moving_time"] %></h5>
-        <h5>Total Elevation Climbed: <%= @athlete_stats.all_ride_totals["elevation_gain"] %></h5>
+        <h5>Total Ride Time: <%= second_to_minute(@athlete_stats.all_ride_totals["moving_time"]) %> min</h5>
+        <h5>Total Elevation Climbed: <%= meter_to_foot(@athlete_stats.all_ride_totals["elevation_gain"]) %> feet</h5>
     </div>
   </div>
 </div>

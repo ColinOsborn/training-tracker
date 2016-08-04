@@ -19,4 +19,8 @@ module ApplicationHelper
     formated = kph * (2.23694)
     formated.round(2)
   end
+
+  def watts_per_kilo()
+
+  end
 end

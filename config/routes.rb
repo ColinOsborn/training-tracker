@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :athletes, only: [:show, :index]
   resources :goals
   resources :notifications, only: [:create]
+  resources :rides, only: [:show, :index]
 end

@@ -20,7 +20,7 @@
       <div class="panel panel-body col-md-3">
         <h4><strong>Vitals</strong></h4>
         <h5>Weight: <%= (current_user.weight).round(2) %> Kilograms</h5>
-        <h5>FTP: <%= current_user.ftp %></h5>
+        <h5>FTP: <%= link_to current_user.ftp, "/definition" %></h5>
       </div>
     </div>
   </div>

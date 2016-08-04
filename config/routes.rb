@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback', to: "sessions#create", as: :strava_login
   delete "/logout",               to: "sessions#destroy"
   get '/dashboard',               to: "dashboard#show"
+  get '/definition',              to: "definition#index"
   resources :athletes, only: [:show, :index]
   resources :goals
   resources :notifications, only: [:create]

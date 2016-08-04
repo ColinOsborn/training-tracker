@@ -5,6 +5,9 @@ class NotificationsController < ApplicationController
   end
 
   def create
+    if params[:reason] == :update_user
+      send_message(current_user.phone_number, success_message)
+    else
     send_message(params[:phone_number], params[:alert_message])
   end
 
@@ -41,6 +44,10 @@ class NotificationsController < ApplicationController
   end
 
   private
+
+    def success_message
+      "Way to go #{current_user.name}. You've come so far. ;("
+    end
 
     def send_message(phone_number, alert_message, image_url)
 

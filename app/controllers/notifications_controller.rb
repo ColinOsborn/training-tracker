@@ -54,7 +54,7 @@ class NotificationsController < ApplicationController
       @client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
       message = @client.account.messages.create(
         :from => @twilio_number,
-        :to => "19706181212",
+        :to => "19706",
         :body => alert_message,
         
       )
